@@ -1,0 +1,7 @@
+<project name="raphaelExtern" url="http://github.com/andyli/raphaelExternForHaxe" license="BSD">
+    <user name="andyli"/>
+    <tag v="js"/>
+    <tag v="extern"/>
+    <description>Extern file for Raphaël(http://raphaeljs.com/), a JS vector graphic library.</description>
+    <version name="1.0">First release. 100% API cover for Raphaël 1.4.3.</version>
+</project>
