@@ -39,8 +39,8 @@ extern class Raphael {
 	inline static public function getColorReset():Void {
 		untyped __js__("Raphael.getColor.reset()");
 	}
-	static public function hsb2rgb(hue:Int, saturation:Int, brightness:Int):RaphaelRGB;
-	static public function rgb2hsb(red:Int, green:Int, blue:Int):RaphaelHSB;
+	static public function hsb2rgb(hue:Float, saturation:Float, brightness:Float):RaphaelRGB;
+	static public function rgb2hsb(red:Float, green:Float, blue:Float):RaphaelHSB;
 	
 	/*
 	 * Events
@@ -92,6 +92,7 @@ extern class Raphael {
 	public function safari():Void;
 	static public function ninja():Class<Raphael>;
 	static public var type(default, null):String; //"SVG", "VML"
+	static public var version(default, null):String;
 }
 
 extern class RaphaelElement {
@@ -168,7 +169,7 @@ extern class RaphaelSet extends RaphaelElement{
 	var length(default, null) : Int;
 	var items(default, null) : Array<RaphaelElement>;
 	function pop() : Null<RaphaelElement>;
-	function push(x : RaphaelElement) : Int;
+	function push(x : RaphaelElement) : RaphaelSet;
 }
 
 typedef RaphaelNode = { > Dom,
@@ -176,14 +177,14 @@ typedef RaphaelNode = { > Dom,
 }
 
 typedef RaphaelRGB = {
-	r:Int, 
-	g:Int, 
-	b:Int, 
+	r:Float, 
+	g:Float, 
+	b:Float, 
 	hex:String
 }
 
 typedef RaphaelHSB = {
-	h:Int, 
-	s:Int, 
-	b:Int
+	h:Float, 
+	s:Float, 
+	b:Float
 }
