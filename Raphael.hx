@@ -1,5 +1,6 @@
 /*
  * Extern file for Raphaël(http://raphaeljs.com/), a JS vector graphic library.
+ * for Raphaël 1.4.7
  */
 
 import js.Dom;
@@ -40,7 +41,9 @@ extern class Raphael {
 		untyped __js__("Raphael.getColor.reset()");
 	}
 	static public function hsb2rgb(hue:Float, saturation:Float, brightness:Float):RaphaelRGB;
+	static public function hsl2rgb(hue:Float, saturation:Float, lightness:Float):RaphaelRGB;
 	static public function rgb2hsb(red:Float, green:Float, blue:Float):RaphaelHSB;
+	static public function rgb2hsl(red:Float, green:Float, blue:Float):RaphaelHSL;
 	
 	/*
 	 * Events
@@ -180,11 +183,20 @@ typedef RaphaelRGB = {
 	r:Float, 
 	g:Float, 
 	b:Float, 
-	hex:String
+	hex:String,
+	toString:Void->String
 }
 
 typedef RaphaelHSB = {
 	h:Float, 
 	s:Float, 
-	b:Float
+	b:Float,
+	toString:Void->String
+}
+
+typedef RaphaelHSL = {
+	h:Float, 
+	s:Float, 
+	l:Float,
+	toString:Void->String
 }

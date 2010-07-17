@@ -2,6 +2,6 @@
     <user name="andyli"/>
     <tag v="js"/>
     <tag v="extern"/>
-    <description>Extern file for Raphaël(http://raphaeljs.com/), a JS vector graphic library.</description>
-    <version name="1.0">First release. 100% API cover for Raphaël 1.4.3.</version>
+    <description>Extern file for Raphael(http://raphaeljs.com/), a JS vector graphic library.</description>
+    <version name="1.4.7">Updated for Raphael 1.4.7.</version>
 </project>
