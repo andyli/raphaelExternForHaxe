@@ -96,6 +96,7 @@ extern class Raphael {
 	static public function ninja():Class<Raphael>;
 	static public var type(default, null):String; //"SVG", "VML"
 	static public var version(default, null):String;
+	public var customAttributes:Dynamic;
 }
 
 extern class RaphaelElement {
