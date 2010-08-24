@@ -97,6 +97,7 @@ extern class Raphael {
 	static public var type(default, null):String; //"SVG", "VML"
 	static public var version(default, null):String;
 	public var customAttributes:Dynamic;
+	static public function angle(x1:Float, y1:Float, x2:Float, y2:Float, ?x3:Float, ?y3:Float):Float;
 }
 
 extern class RaphaelElement {
