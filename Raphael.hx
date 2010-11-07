@@ -1,6 +1,6 @@
 /*
  * Extern file for Raphaël(http://raphaeljs.com/), a JS vector graphic library.
- * for Raphaël 1.4.7
+ * for Raphaël 1.5.2
  */
 
 import js.Dom;
@@ -119,6 +119,7 @@ extern class RaphaelElement {
 	public function animateAlong(path:Dynamic, ms:Float, ?rotate:Bool = false, ?callbackFunction:Dynamic):RaphaelElement;
 	public function animateAlongBack(path:Dynamic, ms:Float, ?rotate:Bool = false, ?callbackFunction:Dynamic):RaphaelElement;
 	public function onAnimation(func:Dynamic):RaphaelElement;
+	public function stop():RaphaelElement;
 	public function getBBox(): { x:Float, y:Float, width:Float, height:Float };
 	public function toFront():RaphaelElement;
 	public function toBack():RaphaelElement;

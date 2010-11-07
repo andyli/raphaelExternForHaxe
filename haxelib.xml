@@ -3,5 +3,5 @@
     <tag v="js"/>
     <tag v="extern"/>
     <description>Extern file for Raphael(http://raphaeljs.com/), a JS vector graphic library.</description>
-    <version name="1.5.1">Updated for Raphael 1.5.1.</version>
+    <version name="1.5.2">Updated for Raphael 1.5.2.</version>
 </project>
