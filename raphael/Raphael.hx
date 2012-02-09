@@ -3,8 +3,11 @@
  * for Raphaël 1.5.2
  */
 
+package raphael;
+
 import js.Dom;
 
+@:native("Raphael")
 extern class Raphael {
 	public function new(p0:Dynamic, ?p1:Dynamic, ?p2:Dynamic, ?p3:Dynamic):Void;
 	
