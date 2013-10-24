@@ -5,7 +5,7 @@
 
 package raphael;
 
-import js.Dom;
+import js.html.*;
 
 @:native("Raphael")
 extern class Raphael {
@@ -93,7 +93,7 @@ extern class Raphael {
 	public function remove():Bool;
 	public function setSize(width:Float, height:Float):Raphael;
 	static public function setWindow(window:Dynamic):Void;
-	public var canvas(default, null):Dom;
+	public var canvas(default, null):Element;
 	public var raphael(default, null):Class<Raphael>;
 	public function safari():Void;
 	static public function ninja():Class<Raphael>;
@@ -181,7 +181,7 @@ extern class RaphaelSet extends RaphaelElement{
 	function push(x : RaphaelElement) : RaphaelSet;
 }
 
-typedef RaphaelNode = { > Dom,
+typedef RaphaelNode = { > Element,
 	var raphael(default, null):RaphaelElement;
 }
 
