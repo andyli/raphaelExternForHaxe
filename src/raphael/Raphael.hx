@@ -38,14 +38,20 @@ extern class Raphael {
 	 * Color
 	 */
 	
+	static public function color(clr:String):RaphaelColor;
 	static public function getRGB(color:String):RaphaelRGB;
 	static public function getColor(?val:Float):String;
-	/* getColor.reset */
 	inline static public function getColorReset():Void {
 		untyped __js__("Raphael.getColor.reset()");
 	}
+	
+	static public function hsb(hue:Float, saturation:Float, brightness:Float):String;
 	static public function hsb2rgb(hue:Float, saturation:Float, brightness:Float):RaphaelRGB;
+
+	static public function hsl(hue:Float, saturation:Float, lightness:Float):String;
 	static public function hsl2rgb(hue:Float, saturation:Float, lightness:Float):RaphaelRGB;
+
+	static public function rgb(red:Float, green:Float, blue:Float):String;
 	static public function rgb2hsb(red:Float, green:Float, blue:Float):RaphaelHSB;
 	static public function rgb2hsl(red:Float, green:Float, blue:Float):RaphaelHSL;
 	
@@ -174,7 +180,7 @@ typedef RaphaelRGB = {
 	g:Float, 
 	b:Float, 
 	hex:String,
-	toString:Void->String
+	error:Bool
 }
 
 typedef RaphaelHSB = {
@@ -189,4 +195,16 @@ typedef RaphaelHSL = {
 	s:Float, 
 	l:Float,
 	toString:Void->String
+}
+
+typedef RaphaelColor = {
+	r:Float, 
+	g:Float, 
+	b:Float, 
+	hex:String,
+	error:Bool,
+	h:Float, 
+	s:Float,
+	v:Float,
+	l:Float
 }
