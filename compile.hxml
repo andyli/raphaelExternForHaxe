@@ -1,5 +1,6 @@
 -js test/bin/Test.js
 -main Test
 -cp test
+-cp src
 
 -cmd open test/bin/test.html
