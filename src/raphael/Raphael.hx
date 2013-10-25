@@ -1,6 +1,6 @@
 /*
  * Extern file for Raphaël(http://raphaeljs.com/), a JS vector graphic library.
- * for Raphaël 1.5.2
+ * for Raphaël 2.1.2
  */
 
 package raphael;
