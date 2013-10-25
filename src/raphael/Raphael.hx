@@ -1,11 +1,11 @@
 /*
  * Extern file for Raphaël(http://raphaeljs.com/), a JS vector graphic library.
- * for Raphaël 1.5.2
+ * for Raphaël 2.1.2
  */
 
 package raphael;
 
-import js.Dom;
+import js.html.*;
 
 @:native("Raphael")
 extern class Raphael {
@@ -15,6 +15,7 @@ extern class Raphael {
 	 * Element creation
 	 */
 	
+	public function animation(params:Dynamic, ms:Float, easing:String, ?callbackFunction:Dynamic):RaphaelElement;
 	public function circle(x:Float, y:Float, r:Float):RaphaelElement;
 	public function rect(x:Float, y:Float, width:Float, height:Float, ?r:Float):RaphaelElement;
 	public function ellipse(x:Float, y:Float, rx:Float, ry:Float):RaphaelElement;
@@ -37,14 +38,20 @@ extern class Raphael {
 	 * Color
 	 */
 	
+	static public function color(clr:String):RaphaelColor;
 	static public function getRGB(color:String):RaphaelRGB;
 	static public function getColor(?val:Float):String;
-	/* getColor.reset */
 	inline static public function getColorReset():Void {
 		untyped __js__("Raphael.getColor.reset()");
 	}
+	
+	static public function hsb(hue:Float, saturation:Float, brightness:Float):String;
 	static public function hsb2rgb(hue:Float, saturation:Float, brightness:Float):RaphaelRGB;
+
+	static public function hsl(hue:Float, saturation:Float, lightness:Float):String;
 	static public function hsl2rgb(hue:Float, saturation:Float, lightness:Float):RaphaelRGB;
+
+	static public function rgb(red:Float, green:Float, blue:Float):String;
 	static public function rgb2hsb(red:Float, green:Float, blue:Float):RaphaelHSB;
 	static public function rgb2hsl(red:Float, green:Float, blue:Float):RaphaelHSL;
 	
@@ -62,11 +69,7 @@ extern class Raphael {
 	public function touchstart(handler:Event->Void):Raphael;
 	public function touchmove(handler:Event->Void):Raphael;
 	public function touchend(handler:Event->Void):Raphael;
-	public function orientationchange(handler:Event->Void):Raphael;
 	public function touchcancel(handler:Event->Void):Raphael;
-	public function gesturestart(handler:Event->Void):Raphael;
-	public function gesturechange(handler:Event->Void):Raphael;
-	public function gestureend(handler:Event->Void):Raphael;
 	
 	public function unclick(handler:Event->Void):Raphael;
 	public function undblclick(handler:Event->Void):Raphael;
@@ -78,12 +81,7 @@ extern class Raphael {
 	public function untouchstart(handler:Event->Void):Raphael;
 	public function untouchmove(handler:Event->Void):Raphael;
 	public function untouchend(handler:Event->Void):Raphael;
-	public function unorientationchange(handler:Event->Void):Raphael;
-	public function untouchcancel(handler:Event->Void):Raphael;
-	public function ungesturestart(handler:Event->Void):Raphael;
-	public function ungesturechange(handler:Event->Void):Raphael;
-	public function ungestureend(handler:Event->Void):Raphael;
-	
+	public function untouchcancel(handler:Event->Void):Raphael;	
 	
 	/*
 	 * Others
@@ -93,7 +91,7 @@ extern class Raphael {
 	public function remove():Bool;
 	public function setSize(width:Float, height:Float):Raphael;
 	static public function setWindow(window:Dynamic):Void;
-	public var canvas(default, null):Dom;
+	public var canvas(default, null):Element;
 	public var raphael(default, null):Class<Raphael>;
 	public function safari():Void;
 	static public function ninja():Class<Raphael>;
@@ -148,11 +146,7 @@ extern class RaphaelElement {
 	public function touchstart(handler:Event->Void):RaphaelElement;
 	public function touchmove(handler:Event->Void):RaphaelElement;
 	public function touchend(handler:Event->Void):RaphaelElement;
-	public function orientationchange(handler:Event->Void):RaphaelElement;
 	public function touchcancel(handler:Event->Void):RaphaelElement;
-	public function gesturestart(handler:Event->Void):RaphaelElement;
-	public function gesturechange(handler:Event->Void):RaphaelElement;
-	public function gestureend(handler:Event->Void):RaphaelElement;
 	public function hover(handler_in:Event->Void, handler_out:Event->Void):RaphaelElement;
 	public function drag(handler_move:Event->Void, handler_start:Event->Void, handler_end:Event->Void):RaphaelElement;
 	
@@ -166,11 +160,7 @@ extern class RaphaelElement {
 	public function untouchstart(handler:Event->Void):RaphaelElement;
 	public function untouchmove(handler:Event->Void):RaphaelElement;
 	public function untouchend(handler:Event->Void):RaphaelElement;
-	public function unorientationchange(handler:Event->Void):RaphaelElement;
 	public function untouchcancel(handler:Event->Void):RaphaelElement;
-	public function ungesturestart(handler:Event->Void):RaphaelElement;
-	public function ungesturechange(handler:Event->Void):RaphaelElement;
-	public function ungestureend(handler:Event->Void):RaphaelElement;
 	public function unhover(handler_in:Event->Void, handler_out:Event->Void):RaphaelElement;
 }
 
@@ -181,7 +171,7 @@ extern class RaphaelSet extends RaphaelElement{
 	function push(x : RaphaelElement) : RaphaelSet;
 }
 
-typedef RaphaelNode = { > Dom,
+typedef RaphaelNode = { > Element,
 	var raphael(default, null):RaphaelElement;
 }
 
@@ -190,7 +180,7 @@ typedef RaphaelRGB = {
 	g:Float, 
 	b:Float, 
 	hex:String,
-	toString:Void->String
+	error:Bool
 }
 
 typedef RaphaelHSB = {
@@ -205,4 +195,16 @@ typedef RaphaelHSL = {
 	s:Float, 
 	l:Float,
 	toString:Void->String
+}
+
+typedef RaphaelColor = {
+	r:Float, 
+	g:Float, 
+	b:Float, 
+	hex:String,
+	error:Bool,
+	h:Float, 
+	s:Float,
+	v:Float,
+	l:Float
 }
