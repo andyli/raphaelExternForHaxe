@@ -5,7 +5,7 @@
 
 package raphael;
 
-import js.Dom;
+import js.html.*;
 
 @:native("Raphael")
 extern class Raphael {
@@ -52,37 +52,37 @@ extern class Raphael {
 	 * Events
 	 */
 	
-	public function click(handler:Event->Void):Raphael;
-	public function dblclick(handler:Event->Void):Raphael;
-	public function mousedown(handler:Event->Void):Raphael;
-	public function mousemove(handler:Event->Void):Raphael;
-	public function mouseout(handler:Event->Void):Raphael;
-	public function mouseover(handler:Event->Void):Raphael;
-	public function mouseup(handler:Event->Void):Raphael;
-	public function touchstart(handler:Event->Void):Raphael;
-	public function touchmove(handler:Event->Void):Raphael;
-	public function touchend(handler:Event->Void):Raphael;
-	public function orientationchange(handler:Event->Void):Raphael;
-	public function touchcancel(handler:Event->Void):Raphael;
-	public function gesturestart(handler:Event->Void):Raphael;
-	public function gesturechange(handler:Event->Void):Raphael;
-	public function gestureend(handler:Event->Void):Raphael;
+	public function click(handler:EventListener):Raphael;
+	public function dblclick(handler:EventListener):Raphael;
+	public function mousedown(handler:EventListener):Raphael;
+	public function mousemove(handler:EventListener):Raphael;
+	public function mouseout(handler:EventListener):Raphael;
+	public function mouseover(handler:EventListener):Raphael;
+	public function mouseup(handler:EventListener):Raphael;
+	public function touchstart(handler:EventListener):Raphael;
+	public function touchmove(handler:EventListener):Raphael;
+	public function touchend(handler:EventListener):Raphael;
+	public function orientationchange(handler:EventListener):Raphael;
+	public function touchcancel(handler:EventListener):Raphael;
+	public function gesturestart(handler:EventListener):Raphael;
+	public function gesturechange(handler:EventListener):Raphael;
+	public function gestureend(handler:EventListener):Raphael;
 	
-	public function unclick(handler:Event->Void):Raphael;
-	public function undblclick(handler:Event->Void):Raphael;
-	public function unmousedown(handler:Event->Void):Raphael;
-	public function unmousemove(handler:Event->Void):Raphael;
-	public function unmouseout(handler:Event->Void):Raphael;
-	public function unmouseover(handler:Event->Void):Raphael;
-	public function unmouseup(handler:Event->Void):Raphael;
-	public function untouchstart(handler:Event->Void):Raphael;
-	public function untouchmove(handler:Event->Void):Raphael;
-	public function untouchend(handler:Event->Void):Raphael;
-	public function unorientationchange(handler:Event->Void):Raphael;
-	public function untouchcancel(handler:Event->Void):Raphael;
-	public function ungesturestart(handler:Event->Void):Raphael;
-	public function ungesturechange(handler:Event->Void):Raphael;
-	public function ungestureend(handler:Event->Void):Raphael;
+	public function unclick(handler:EventListener):Raphael;
+	public function undblclick(handler:EventListener):Raphael;
+	public function unmousedown(handler:EventListener):Raphael;
+	public function unmousemove(handler:EventListener):Raphael;
+	public function unmouseout(handler:EventListener):Raphael;
+	public function unmouseover(handler:EventListener):Raphael;
+	public function unmouseup(handler:EventListener):Raphael;
+	public function untouchstart(handler:EventListener):Raphael;
+	public function untouchmove(handler:EventListener):Raphael;
+	public function untouchend(handler:EventListener):Raphael;
+	public function unorientationchange(handler:EventListener):Raphael;
+	public function untouchcancel(handler:EventListener):Raphael;
+	public function ungesturestart(handler:EventListener):Raphael;
+	public function ungesturechange(handler:EventListener):Raphael;
+	public function ungestureend(handler:EventListener):Raphael;
 	
 	
 	/*
@@ -93,7 +93,7 @@ extern class Raphael {
 	public function remove():Bool;
 	public function setSize(width:Float, height:Float):Raphael;
 	static public function setWindow(window:Dynamic):Void;
-	public var canvas(default, null):Dom;
+	public var canvas(default, null):Element;
 	public var raphael(default, null):Class<Raphael>;
 	public function safari():Void;
 	static public function ninja():Class<Raphael>;
@@ -138,40 +138,40 @@ extern class RaphaelElement {
 	 * Events
 	 */
 	
-	public function click(handler:Event->Void):RaphaelElement;
-	public function dblclick(handler:Event->Void):RaphaelElement;
-	public function mousedown(handler:Event->Void):RaphaelElement;
-	public function mousemove(handler:Event->Void):RaphaelElement;
-	public function mouseout(handler:Event->Void):RaphaelElement;
-	public function mouseover(handler:Event->Void):RaphaelElement;
-	public function mouseup(handler:Event->Void):RaphaelElement;
-	public function touchstart(handler:Event->Void):RaphaelElement;
-	public function touchmove(handler:Event->Void):RaphaelElement;
-	public function touchend(handler:Event->Void):RaphaelElement;
-	public function orientationchange(handler:Event->Void):RaphaelElement;
-	public function touchcancel(handler:Event->Void):RaphaelElement;
-	public function gesturestart(handler:Event->Void):RaphaelElement;
-	public function gesturechange(handler:Event->Void):RaphaelElement;
-	public function gestureend(handler:Event->Void):RaphaelElement;
-	public function hover(handler_in:Event->Void, handler_out:Event->Void):RaphaelElement;
-	public function drag(handler_move:Event->Void, handler_start:Event->Void, handler_end:Event->Void):RaphaelElement;
+	public function click(handler:EventListener):RaphaelElement;
+	public function dblclick(handler:EventListener):RaphaelElement;
+	public function mousedown(handler:EventListener):RaphaelElement;
+	public function mousemove(handler:EventListener):RaphaelElement;
+	public function mouseout(handler:EventListener):RaphaelElement;
+	public function mouseover(handler:EventListener):RaphaelElement;
+	public function mouseup(handler:EventListener):RaphaelElement;
+	public function touchstart(handler:EventListener):RaphaelElement;
+	public function touchmove(handler:EventListener):RaphaelElement;
+	public function touchend(handler:EventListener):RaphaelElement;
+	public function orientationchange(handler:EventListener):RaphaelElement;
+	public function touchcancel(handler:EventListener):RaphaelElement;
+	public function gesturestart(handler:EventListener):RaphaelElement;
+	public function gesturechange(handler:EventListener):RaphaelElement;
+	public function gestureend(handler:EventListener):RaphaelElement;
+	public function hover(handler_in:EventListener, handler_out:EventListener):RaphaelElement;
+	public function drag(handler_move:EventListener, handler_start:EventListener, handler_end:EventListener):RaphaelElement;
 	
-	public function unclick(handler:Event->Void):RaphaelElement;
-	public function undblclick(handler:Event->Void):RaphaelElement;
-	public function unmousedown(handler:Event->Void):RaphaelElement;
-	public function unmousemove(handler:Event->Void):RaphaelElement;
-	public function unmouseout(handler:Event->Void):RaphaelElement;
-	public function unmouseover(handler:Event->Void):RaphaelElement;
-	public function unmouseup(handler:Event->Void):RaphaelElement;
-	public function untouchstart(handler:Event->Void):RaphaelElement;
-	public function untouchmove(handler:Event->Void):RaphaelElement;
-	public function untouchend(handler:Event->Void):RaphaelElement;
-	public function unorientationchange(handler:Event->Void):RaphaelElement;
-	public function untouchcancel(handler:Event->Void):RaphaelElement;
-	public function ungesturestart(handler:Event->Void):RaphaelElement;
-	public function ungesturechange(handler:Event->Void):RaphaelElement;
-	public function ungestureend(handler:Event->Void):RaphaelElement;
-	public function unhover(handler_in:Event->Void, handler_out:Event->Void):RaphaelElement;
+	public function unclick(handler:EventListener):RaphaelElement;
+	public function undblclick(handler:EventListener):RaphaelElement;
+	public function unmousedown(handler:EventListener):RaphaelElement;
+	public function unmousemove(handler:EventListener):RaphaelElement;
+	public function unmouseout(handler:EventListener):RaphaelElement;
+	public function unmouseover(handler:EventListener):RaphaelElement;
+	public function unmouseup(handler:EventListener):RaphaelElement;
+	public function untouchstart(handler:EventListener):RaphaelElement;
+	public function untouchmove(handler:EventListener):RaphaelElement;
+	public function untouchend(handler:EventListener):RaphaelElement;
+	public function unorientationchange(handler:EventListener):RaphaelElement;
+	public function untouchcancel(handler:EventListener):RaphaelElement;
+	public function ungesturestart(handler:EventListener):RaphaelElement;
+	public function ungesturechange(handler:EventListener):RaphaelElement;
+	public function ungestureend(handler:EventListener):RaphaelElement;
+	public function unhover(handler_in:EventListener, handler_out:EventListener):RaphaelElement;
 }
 
 extern class RaphaelSet extends RaphaelElement{
@@ -181,7 +181,7 @@ extern class RaphaelSet extends RaphaelElement{
 	function push(x : RaphaelElement) : RaphaelSet;
 }
 
-typedef RaphaelNode = { > Dom,
+typedef RaphaelNode = {> Element,
 	var raphael(default, null):RaphaelElement;
 }
 
